@@ -1,0 +1,29 @@
+<html ng-app="LunchCheck">
+  <head>
+    <title>Lunch Checker App</title>
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div ng-controller="LunchCheckController">
+      <h1 class="title">Lunch Checker App</h1>
+      <div class="input">
+        <input
+          class="text"
+          type="text"
+          placeholder="list your dishes separated by commas..."
+          ng-model="inputText"
+          ng-keyup="updateText()"
+        /><br />
+        NB: Avoid empty elements
+      </div>
+      <br />
+      <div class="button">
+        <button ng-click="LunchCheck()">Check If Too Much</button>
+      </div>
+      <br />
+      {{displayMessage() }}
+    </div>
+  </body>
+</html>
